@@ -1,6 +1,9 @@
 <script setup>
 import LoadingIndicator from "@/components/LoadingIndicator.vue"
+import { generateRndColor } from "../../utils"
 import { ref,  onMounted } from "vue"
+
+defineEmits(['category-selected'])
 
 const isLoading = ref(true)
 const categories = ref([])
@@ -24,9 +27,6 @@ async function fetchCategories() {
   }
 }
 
-function generateRndColor() {
-  return '#' + Math.floor(Math.random()*16777215).toString(16)
-}
 </script>
 
 <template>
@@ -39,8 +39,9 @@ function generateRndColor() {
       v-for="category in categories"
       :key="category.id"
       :style="{ backgroundColor: generateRndColor() }"
+      @click="$emit('category-selected', category)"
       class="flex justify-center items-center mx-3 my-3 min-h-[85px] cursor-pointer transition-all duration-150 hover:mx-20">
-    <p class="text-2xl text-center top-1/2">{{ category.name }}</p>
+    <p class="text-2xl text-center top-1/2 text-black">{{ category.name }}</p>
   </div>
 </div>
 </template>
