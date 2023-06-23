@@ -19,6 +19,10 @@ Play now by opening this link:
 4. Start the development server using `npm run dev`
 5. Open the app in your web browser at `http://localhost:port`
 
+## Source
+Questions are gathered from the following source: https://opentdb.com
+
 ## License
 
 This project is licensed under the **MIT License**.
+
