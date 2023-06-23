@@ -1,35 +1,18 @@
-# Trivia-Quiz
+# Trivia Quiz
+(Vue 3 + Vite)
 
-This template should help get you started developing with Vue 3 in Vite.
+## Introduction
 
-## Recommended IDE Setup
+This repository contains a simple trivia quiz app made with Vue 3 and Vite. The app allows users to take a quiz consisting of multiple choice and true/false questions and provides them with their score upon completion.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## How to Install and Use
 
-## Customize configuration
+1. Clone this repository to your local machine using `git clone https://github.com/mjkhonline/Trivia-Quiz`
+2. Navigate to the project directory using `cd Trivia-Quiz`
+3. Install project dependencies using `npm install`
+4. Start the development server using `npm run dev`
+5. Open the app in your web browser at `http://localhost:port`
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## License
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+This project is licensed under the **MIT License**.
