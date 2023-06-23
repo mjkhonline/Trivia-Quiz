@@ -83,7 +83,7 @@ async function solve(answer) {
       <p :class="answer.value.length > 16 ? 'text-md' : 'text-3xl text-center'" v-html="answer.value" />
       <img
           v-if="resultVisible"
-          :src="`/src/assets/${answer.isCorrect ? 'correct' : 'wrong'}.png`"
+          :src="`/${answer.isCorrect ? 'correct' : 'wrong'}.png`"
           :class="answer.isCorrect ? 'w-[48px] h-[48px]' : 'w-[35px] h-[35px]'"
           :alt="`${answer.isCorrect ? 'correct' : 'wrong'} answer`" />
     </div>

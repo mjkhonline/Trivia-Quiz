@@ -31,7 +31,7 @@ async function fetchCategories() {
 
 <template>
 <div class="mx-auto p-16 bg-gray-50 lg:max-w-[60%]">
-  <img :src="'/src/assets/question.gif'" alt="question" class="h-[200px]" />
+  <img :src="'/question.gif'" alt="question" class="h-[200px]" />
   <h1 class="my-10 p-2 text-3xl">Which of the following topics are you interested in?</h1>
   <LoadingIndicator v-if="isLoading" />
   <div
