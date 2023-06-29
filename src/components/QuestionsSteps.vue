@@ -1,7 +1,7 @@
 <script setup>
 import LoadingIndicator from "@/components/LoadingIndicator.vue"
 import QuestionBox from "@/components/QuestionBox.vue"
-import { reactive, onMounted, defineProps, computed } from "vue"
+import { reactive, onMounted, computed } from "vue"
 import { subtractDates } from "../../utils"
 
 const emit = defineEmits(['finished'])

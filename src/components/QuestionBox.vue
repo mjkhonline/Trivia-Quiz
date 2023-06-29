@@ -1,6 +1,6 @@
 <script setup>
 import { generateRndColor, shuffleArray, asyncTimeout } from "../../utils"
-import {defineProps, computed, ref, watch, reactive} from "vue"
+import { computed, ref, watch, reactive} from "vue"
 
 const emit = defineEmits(['result'])
 const props = defineProps({
