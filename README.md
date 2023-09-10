@@ -1,9 +1,9 @@
 # Trivia Quiz
-#### (Vue 3 + Vite)
+#### (Vue 3 + Vite + Pinia)
 
 ## Introduction
 
-This repository contains a simple trivia quiz app made with Vue 3 and Vite. The app allows users to take a quiz consisting of multiple choice and true/false questions and provides them with their score upon completion.
+This repository contains a simple trivia quiz app made with Vue 3, Pinia and Vite. The app allows users to take a quiz consisting of multiple choice and true/false questions and provides them with their score upon completion.
 
 ## Live Demo
 Play now by opening this link:

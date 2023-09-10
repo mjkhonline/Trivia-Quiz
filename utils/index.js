@@ -1,3 +1,16 @@
+export async function fetchData(url) {
+    try {
+        const response = await fetch(url, {
+            method:'GET',
+            headers: { Accept: 'application/json' },
+            cache: 'default'
+        })
+        return await response.json()
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 export function generateRndColor() {
     return '#' + Math.floor(Math.random()*16777215).toString(16)
 }

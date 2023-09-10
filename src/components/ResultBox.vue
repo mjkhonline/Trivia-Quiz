@@ -1,28 +1,19 @@
 <script setup>
+import {useQuestionsStore} from "@/stores/questions"
 
-const props = defineProps({
-  category: {
-    type: Object,
-    required: true
-  },
-  result: {
-    type: Object,
-    required: true
-  }
-})
-
+const { selectedCategory, result } = useQuestionsStore()
 </script>
 
 <template>
   <div class="mx-auto p-16 bg-gray-50 lg:max-w-[60%]">
     <div>
       <h2 class="text-2xl mb-16">Result
-        <small class="text-md text-gray-400 block">{{ props.category.name }}</small>
+        <small class="text-md text-gray-400 block">{{ selectedCategory.name }}</small>
       </h2>
       <p class="text-xl text-cyan-500">Congratulations 🎉,<br />
         You answered
-        <b>{{ props.result.score }}</b>
-        questions correctly, <span class="text-orange-500">in <b>{{ parseInt(props.result.time) }}</b> seconds!</span></p>
+        <b>{{ result.score }}</b>
+        questions correctly, <span class="text-orange-500">in <b>{{ parseInt(result.time) }}</b> seconds!</span></p>
     </div>
   <div class="mt-36">
     <p class="text-gray-400 text-sm">
@@ -32,7 +23,3 @@ const props = defineProps({
   </div>
   </div>
 </template>
-
-<style scoped>
-
-</style>

@@ -1,30 +1,25 @@
 <script setup>
 import LoadingIndicator from "@/components/LoadingIndicator.vue"
+import { useQuestionsStore } from "@/stores/questions"
+import { useAppStore } from "@/stores/app"
 import { generateRndColor } from "../../utils"
-import { ref,  onMounted } from "vue"
+import { ref, onMounted } from "vue"
 
-defineEmits(['category-selected'])
+const questions = useQuestionsStore()
+const { fetchCategories, updateCategory } = questions
+const { goToQuestioningStep } = useAppStore()
 
 const isLoading = ref(true)
-const categories = ref([])
 
-onMounted(()=> {
-  fetchCategories()
+onMounted(async ()=> {
+  isLoading.value = true
+  await fetchCategories()
+  isLoading.value = false
 })
 
-async function fetchCategories() {
- try {
-    const response = await fetch('https://opentdb.com/api_category.php', {
-      method:'GET',
-      headers: { Accept: 'application/json' },
-      cache: 'default'
-    })
-    const data = await response.json()
-    categories.value = data['trivia_categories']
-    isLoading.value = false
-  } catch (e) {
-    console.log(e)
-  }
+function selectCategory(category) {
+  updateCategory(category)
+  goToQuestioningStep()
 }
 
 </script>
@@ -36,10 +31,10 @@ async function fetchCategories() {
   <LoadingIndicator v-if="isLoading" />
   <div
       v-else
-      v-for="category in categories"
+      v-for="category in questions.categories"
       :key="category.id"
       :style="{ backgroundColor: generateRndColor() }"
-      @click="$emit('category-selected', category)"
+      @click="selectCategory(category)"
       class="flex justify-center items-center mx-3 my-3 min-h-[85px] cursor-pointer transition-all duration-150 hover:mx-20">
     <p class="text-2xl text-center top-1/2 text-black">{{ category.name }}</p>
   </div>

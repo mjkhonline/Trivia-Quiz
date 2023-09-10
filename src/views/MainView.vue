@@ -2,48 +2,22 @@
 import CategorySelection from "@/components/CategorySelection.vue"
 import QuestionsSteps from "@/components/QuestionsSteps.vue"
 import ResultBox from "@/components/ResultBox.vue"
-import { ref, computed } from "vue"
+import { useAppStore } from "@/stores/app"
+import { computed } from "vue"
 
-const currentStep = ref('category-selection')
+const app = useAppStore()
+
 const currentComponent = computed(() => ({
   'category-selection': CategorySelection,
   'questioning': QuestionsSteps,
   'result': ResultBox
-}[currentStep.value]))
-
-const selectedCategory = ref({})
-const result = ref({})
-
-const bindData = computed(() => ({
-  'questioning': {
-    category: selectedCategory.value
-  },
-  'result': {
-    category: selectedCategory.value,
-    result: result.value
-  }
-}[currentStep.value]))
-
-function forwardToQuestioningStep(category) {
-  selectedCategory.value = category
-  currentStep.value = 'questioning'
-}
-
-function forwardToResult(res) {
-  result.value = res
-  currentStep.value = 'result'
-}
+}[app.currentStep]))
 
 </script>
 
 <template>
   <main class="relative h-100">
-    <component
-        :is="currentComponent"
-        v-bind="bindData"
-        @category-selected="forwardToQuestioningStep"
-        @finished="forwardToResult"
-    />
+    <component :is="currentComponent" />
   </main>
   <footer class="w-screen fixed bottom-0 py-1 bg-white">
     <div>
