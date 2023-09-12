@@ -25,9 +25,9 @@ function selectCategory(category) {
 </script>
 
 <template>
-<div class="mx-auto p-16 bg-gray-50 lg:max-w-[60%]">
+<div class="mx-auto p-1 md:p-16 bg-gray-50 lg:max-w-[60%]">
   <img :src="'/question.gif'" alt="question" class="h-[200px]" />
-  <h1 class="my-10 p-2 text-3xl">Which of the following topics are you interested in?</h1>
+  <h1 class="my-2 md:my-10 p-1 md:p-2 text-xl md:text-3xl">Which of the following topics are you interested in?</h1>
   <LoadingIndicator v-if="isLoading" />
   <div
       v-else
@@ -35,12 +35,8 @@ function selectCategory(category) {
       :key="category.id"
       :style="{ backgroundColor: generateRndColor() }"
       @click="selectCategory(category)"
-      class="flex justify-center items-center mx-3 my-3 min-h-[85px] cursor-pointer transition-all duration-150 hover:mx-20">
-    <p class="text-2xl text-center top-1/2 text-black">{{ category.name }}</p>
+      class="flex justify-center items-center mx-3 my-3 min-h-[60px] md:min-h-[85px] cursor-pointer transition-all duration-150 hover:mx-20">
+    <p class="text-xl md:text-2xl text-center top-1/2 text-black">{{ category.name }}</p>
   </div>
 </div>
 </template>
-
-<style scoped>
-
-</style>

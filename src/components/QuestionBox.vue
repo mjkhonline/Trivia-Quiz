@@ -71,16 +71,16 @@ async function solve(answer) {
 
 <template>
 <div class="relative pb-40">
-  <h1 :class="{'text-gray-400' : resultVisible}" class="text-3xl transition-colors duration-150 select-none" v-html="props.question.question" />
-  <div class="mt-10 flex justify-between items-center">
+  <h1 :class="{'text-gray-400' : resultVisible}" class="text-xl md:text-3xl transition-colors duration-150 select-none" v-html="props.question.question" />
+  <div class="mt-3 md:mt-10 flex flex-col md:flex-row justify-between items-center">
     <div
         v-for="(answer, index) in answers"
         :key="answer.value"
         :style="{ backgroundColor: colors[index] }"
         @click="solve(answer)"
         :class="{'hover:scale-110 hover:text-black cursor-pointer': !resultVisible}"
-        class="min-h-[150px] w-full mx-3 p-3 transition-all duration-150 text-white flex justify-around items-center">
-      <p :class="answer.value.length > 16 ? 'text-md' : 'text-3xl text-center'" v-html="answer.value" />
+        class="min-h-[100px] md:min-h-[150px] w-full my-2 md:my-0 mx-3 p-3 transition-all duration-150 text-white flex justify-around items-center">
+      <p :class="answer.value.length > 16 ? 'text-sm md:text-md' : 'text-xl md:text-3xl text-center'" v-html="answer.value" />
       <img
           v-if="resultVisible"
           :src="`/${answer.isCorrect ? 'correct' : 'wrong'}.png`"

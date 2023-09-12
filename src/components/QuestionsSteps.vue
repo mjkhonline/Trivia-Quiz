@@ -45,10 +45,10 @@ function nextQuestion(result) {
 </script>
 
 <template>
-  <div class="mx-auto p-16 bg-gray-50 lg:max-w-[60%]">
+  <div class="mx-auto p-4 md:p-16 bg-gray-50 lg:max-w-[60%]">
     <LoadingIndicator v-if="state.isLoading" />
     <div v-else>
-      <h2 class="border-l-black border-l-2 pl-2 text-2xl mb-16">Question #{{ state.step + 1 }}
+      <h2 class="border-l-black border-l-2 pl-2 text-2xl mb-5 md:mb-16">Question #{{ state.step + 1 }}
         <small class="text-md text-gray-400 block">{{ selectedCategory.name }}</small>
       </h2>
       <QuestionBox

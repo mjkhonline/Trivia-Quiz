@@ -5,12 +5,12 @@ const { selectedCategory, result } = useQuestionsStore()
 </script>
 
 <template>
-  <div class="mx-auto p-16 bg-gray-50 lg:max-w-[60%]">
+  <div class="mx-auto p-4 md:p-16 bg-gray-50 lg:max-w-[60%]">
     <div>
-      <h2 class="text-2xl mb-16">Result
+      <h2 class="text-xl md:text-2xl mb-16">Result
         <small class="text-md text-gray-400 block">{{ selectedCategory.name }}</small>
       </h2>
-      <p class="text-xl text-cyan-500">Congratulations 🎉,<br />
+      <p class="text-lg md:text-xl text-cyan-500">Congratulations 🎉,<br />
         You answered
         <b>{{ result.score }}</b>
         questions correctly, <span class="text-orange-500">in <b>{{ parseInt(result.time) }}</b> seconds!</span></p>

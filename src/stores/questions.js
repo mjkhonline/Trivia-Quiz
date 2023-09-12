@@ -9,7 +9,7 @@ export const useQuestionsStore = defineStore('questions', () => {
         score: 0,
         time: null
     })
-    const numberOfQuestions = ref(2)// 10
+    const numberOfQuestions = ref(10)
     let categoryQuestions = ref([])
 
     async function fetchCategories() {
