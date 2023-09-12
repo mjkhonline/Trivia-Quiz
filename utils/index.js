@@ -12,7 +12,13 @@ export async function fetchData(url) {
 }
 
 export function generateRndColor() {
-    return '#' + Math.floor(Math.random()*16777215).toString(16)
+    function rndCode() {
+        const whiteThreshold = 220
+        const blackThreshold = 50
+        return Math.floor(Math.random() * whiteThreshold + blackThreshold)
+    }
+
+    return `rgb(${rndCode()}, ${rndCode()}, ${rndCode()})`
 }
 
 export function shuffleArray(arr) {
